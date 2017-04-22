@@ -1,0 +1,516 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/martinheidegger/mapslice">mapslice (v1.3.0)</a>
+</h1>
+<h4>Slices a given image into tiles to be used for a interactive map display. (including command-line tool)</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mapslice">module mapslice</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.mapslice">
+            function <span class="apidocSignatureSpan"></span>mapslice
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer">
+            function <span class="apidocSignatureSpan">mapslice.</span>MapSlicer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.super_">
+            function <span class="apidocSignatureSpan">mapslice.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mapslice.</span>MapSlicer.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mapslice.MapSlicer">module mapslice.MapSlicer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.MapSlicer">
+            function <span class="apidocSignatureSpan">mapslice.</span>MapSlicer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.super_">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mapslice.MapSlicer.prototype">module mapslice.MapSlicer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.prototype.collectTasks">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>collectTasks
+            <span class="apidocSignatureSpan">(imageWidth, imageHeight)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.prototype.makeParallel">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>makeParallel
+            <span class="apidocSignatureSpan">(tasks)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.prototype.setup">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>setup
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.prototype.start">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.prototype.startProcess">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>startProcess
+            <span class="apidocSignatureSpan">(inputWidth, inputHeight)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mapslice.MapSlicer.prototype.wrapProgressTask">
+            function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>wrapProgressTask
+            <span class="apidocSignatureSpan">(task)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mapslice" id="apidoc.module.mapslice">module mapslice</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.mapslice" id="apidoc.element.mapslice.mapslice">
+        function <span class="apidocSignatureSpan"></span>mapslice
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MapSlicer(options) {
+  if (!(this instanceof MapSlicer)) {
+    return new MapSlicer(options)
+  }
+
+  var opts = settingsSchema.validate(options)
+
+  if (opts.error) {
+    this.emit('error', opts.error)
+    return
+  }
+
+  this.options = opts.value
+
+  if (options.autoStart) {
+    process.nextTick(this.start.bind(this))
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer" id="apidoc.element.mapslice.MapSlicer">
+        function <span class="apidocSignatureSpan">mapslice.</span>MapSlicer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MapSlicer(options) {
+  if (!(this instanceof MapSlicer)) {
+    return new MapSlicer(options)
+  }
+
+  var opts = settingsSchema.validate(options)
+
+  if (opts.error) {
+    this.emit('error', opts.error)
+    return
+  }
+
+  this.options = opts.value
+
+  if (options.autoStart) {
+    process.nextTick(this.start.bind(this))
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.super_" id="apidoc.element.mapslice.super_">
+        function <span class="apidocSignatureSpan">mapslice.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mapslice.MapSlicer" id="apidoc.module.mapslice.MapSlicer">module mapslice.MapSlicer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.MapSlicer" id="apidoc.element.mapslice.MapSlicer.MapSlicer">
+        function <span class="apidocSignatureSpan">mapslice.</span>MapSlicer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MapSlicer(options) {
+  if (!(this instanceof MapSlicer)) {
+    return new MapSlicer(options)
+  }
+
+  var opts = settingsSchema.validate(options)
+
+  if (opts.error) {
+    this.emit('error', opts.error)
+    return
+  }
+
+  this.options = opts.value
+
+  if (options.autoStart) {
+    process.nextTick(this.start.bind(this))
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.super_" id="apidoc.element.mapslice.MapSlicer.super_">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mapslice.MapSlicer.prototype" id="apidoc.module.mapslice.MapSlicer.prototype">module mapslice.MapSlicer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.prototype.collectTasks" id="apidoc.element.mapslice.MapSlicer.prototype.collectTasks">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>collectTasks
+        <span class="apidocSignatureSpan">(imageWidth, imageHeight)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">collectTasks = function (imageWidth, imageHeight) {
+  var levels = calculateLevelData(imageWidth, imageHeight, this.options)
+  var tasks = []
+  var patternMd5 = createHash(this.options.output)
+
+  this.emit('levels', levels)
+
+  this.totalTasks = 0
+  this.executedTasks = 0
+  for (var i = 0; i &lt; levels.length; ++i) {
+    var level = levels[i]
+    var levelTasks = []
+    var tiles = level.tiles
+    var levelFile = path.join(this.options.tmp, patternMd5 + '_' + level.level + '.sgi')
+
+    tasks.push(this.wrapProgressTask(processLevel(this.options, level, levelFile)))
+    for (var j = 0; j &lt; tiles.length; ++j) {
+      var tile = tiles[j]
+      levelTasks.push(this.wrapProgressTask(processTile(this.options, level, levelFile, tile)))
+    }
+    tasks.push(this.makeParallel(levelTasks))
+  }
+  return tasks
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.prototype.makeParallel" id="apidoc.element.mapslice.MapSlicer.prototype.makeParallel">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>makeParallel
+        <span class="apidocSignatureSpan">(tasks)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeParallel = function (tasks) {
+  return function (next) {
+    if (this.options.parallelLimit === 0) {
+      async.parallel(tasks, next)
+    } else {
+      async.parallelLimit(tasks, this.options.parallelLimit, next)
+    }
+  }.bind(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.prototype.setup" id="apidoc.element.mapslice.MapSlicer.prototype.setup">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>setup
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function () {
+  fs.exists(this.options.file, function (exists) {
+    if (exists) {
+      this.options.gm(this.options.file).size(function (err, inputSpec) {
+        if (err) {
+          this.emit('error', new Error('Error#2: Error while fetching size of File: ' + this.options.file + '; Error: ' + err))
+        } else {
+          this.emit('inputSize', inputSpec.width, inputSpec.height)
+          this.startProcess(inputSpec.width, inputSpec.height)
+        }
+      }.bind(this))
+    } else {
+      this.emit('error', new Error('Error#1: File not found: ' + this.options.file))
+    }
+  }.bind(this))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.prototype.start" id="apidoc.element.mapslice.MapSlicer.prototype.start">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function start() {
+  var options = this.options
+
+  if (!options.file) {
+    this.emit('error', new Error('Error#5: Target file required.'))
+    return
+  }
+
+  if (!isPowerOfTwo(options.tileSize)) {
+    this.emit('error', new Error('Error#6: TileSize is not power of 2 like: 128, 256, etc.'))
+    return
+  }
+
+  if (options.outputFolder) {
+    if (options.output) {
+      this.emit('error', new Error('Error#7: Both outputFolder and output are defined. Please define only one.'))
+      return
+    }
+    options.output = path.join(path.dirname(options.file), options.outputFolder, '{google}.jpg')
+  } else if (!options.output) {
+    options.output = path.join(path.dirname(options.file), path.basename(options.file, path.extname(options.file)), '{google}.jpg
+')
+  }
+
+  if (!options.gm) {
+    if (options.imageMagick) {
+      options.gm = require('gm').subClass({ imageMagick: true })
+    } else {
+      options.gm = require('gm') // gm might be replaced to use imagemagick or graphicsMagick
+    }
+  }
+
+  this.setup()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.info("Progress: "+Math.round(progress*100)+"%");
+});
+
+mapSlicer.on("end", function() {
+    console.info("Finished processing slices.");
+});
+
+mapSlicer.<span class="apidocCodeKeywordSpan">start</span>();
+```
+
+## Size detection and scaling
+
+To render the image in its fullest glory, mapslice assumes that you want to preserve the original image-quality and chooses input
+-size as its starting point from which the quality should be reduced. However: If you have a fixed-size map-user-interface then
+you might want the smallest image quality to fit this user-interface-design in order to assure that its is beautifully visible.
+To produce tiles that fit this needs you can use the "minWidth" or "minHeight" property which fits the map to
+ have its lowest size matching exactly your required size:
+
+```console
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.prototype.startProcess" id="apidoc.element.mapslice.MapSlicer.prototype.startProcess">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>startProcess
+        <span class="apidocSignatureSpan">(inputWidth, inputHeight)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startProcess = function (inputWidth, inputHeight) {
+  this.options = calculateZoomLevel(inputWidth, inputHeight, this.options)
+
+  var tasks = this.collectTasks(inputWidth, inputHeight)
+
+  this.emit('start', this.totalTasks, this.options)
+  this.emit('progress', 0, this.totalTasks, this.executedTasks)
+  async.series(tasks, function () {
+    this.emit('end')
+  }.bind(this))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mapslice.MapSlicer.prototype.wrapProgressTask" id="apidoc.element.mapslice.MapSlicer.prototype.wrapProgressTask">
+        function <span class="apidocSignatureSpan">mapslice.MapSlicer.prototype.</span>wrapProgressTask
+        <span class="apidocSignatureSpan">(task)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrapProgressTask = function (task) {
+  this.totalTasks++
+  return function (next) {
+    task(function (error, result) {
+      this.executedTasks++
+      this.emit('progress', this.executedTasks / this.totalTasks, this.totalTasks, this.executedTasks, result)
+      if (error) {
+        this.emit('error', error)
+      }
+      next(error, result)
+    }.bind(this))
+  }.bind(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
